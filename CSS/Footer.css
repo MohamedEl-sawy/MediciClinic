@@ -1,0 +1,44 @@
+/* Footer */
+footer {
+    width: 100%;
+    padding-top: 80px;
+    margin: 100px auto 0;
+    border-radius: 50px;
+    background-image: url(../img/bg-footer.jpg);
+    background-size: cover;
+    background-color: #e2f5fc;
+    background-repeat: no-repeat;
+  }
+  
+  /* Content */
+  footer .container .row .contentFoot figure img {
+    max-width: 250px;
+  }
+  
+  /* Department */
+  footer .container .row .departmentsFoot li:hover {
+    padding-left: 13px !important;
+    cursor: pointer;
+  }
+  
+  footer .container .row .departmentsFoot li:hover i {
+    color: var(--main-color) !important;
+  }
+  
+  /* Contact Info */
+  footer .container .row .contactInfo .row a:hover {
+    color: var(--main-color) !important;
+  }
+  
+  @media (width >= 1200px) {
+    footer {
+      width: 90%;
+      padding: 80px 50px 0;
+      background-position: center 0;
+    }
+  
+    footer .container .row .contactInfo {
+      position: relative;
+      top: -150px;
+    }
+  }

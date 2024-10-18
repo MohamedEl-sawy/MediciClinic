@@ -1,0 +1,443 @@
+table thead th,
+table tbody {
+    padding: 10px 2px !important;
+}
+
+.notEmpty {
+    position: relative;
+    top: 80px;
+}
+
+.notEmpty .container {
+    max-width: 100% !important;
+    overflow-x: auto; /* Adjusted for better scroll behavior */
+}
+
+.notEmpty .container .table {
+    min-width: 840px !important;
+}
+
+tfoot td form input {
+    border: 1px solid var(--main-color);
+}
+
+tfoot td form input:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--main-color); /* Optional enhancement */
+}
+
+.removeBtn {
+    cursor: pointer;
+}
+
+.cartTotals {
+    width: 100% !important;
+}
+
+@media (min-width: 880px) {
+    .notEmpty .container {
+        overflow: initial;
+    }
+}
+
+@media (min-width: 992px) {
+    .cartTotals {
+        width: 700px !important;
+        margin-left: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .notEmpty .container {
+        width: 90%;
+        max-width: 90% !important;
+    }
+}
+
+
+
+/* .wrapper {
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 20px 15px;
+}
+
+.wrapper .option {
+    width: 100%;
+    height: 50%;
+    border: 2px solid rgb(33, 76, 149);
+    cursor: pointer;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#option-1:checked ~ .option-1, 
+#option-2:checked ~ .option-2 {
+    background-color: rgb(33, 76, 149);
+}
+.wrapper .option .dot {
+    height: 20px;
+    width: 20px;
+    background-color: rgb(33, 76, 149);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#option-1:checked ~ .option-1 .dot, 
+#option-2:checked ~ .option-2 .dot {
+    background-color: rgb(33, 76, 149);
+}
+.wrapper .option .dot::before {
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: aquamarine;
+    opacity: 0;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+
+}
+#option-1:checked ~ .option-1 .dot::before, 
+#option-2:checked ~ .option-2 .dot::before {
+    opacity: 1;
+}
+.wrapper .option span {
+    font-size: 20px;
+    font-weight: 500;
+}
+#option-1:checked ~ .option-1 span, 
+#option-2:checked ~ .option-2 span {
+    color: cadetblue;
+}
+.wrapper input {
+    display: none;
+}
+
+#h1 {
+    display: none;
+}
+#payment {
+    display: none;
+}
+#price {
+    display: none;
+    
+}
+#head {
+    opacity: 0;
+} */
+
+/* 
+main .container .card{
+    background: var(--orangeColor);
+    height: 100%;
+    width: 100%;
+    border-radius:25px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-face header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+}
+.front-face .logo{
+        display: flex;
+        align-items: center;
+}
+
+
+.front-face .logo img{
+    width: 48px;
+    margin-right: 10px;
+}
+h5{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.front-face .chip{
+    width: 50px;
+}
+
+
+.front-face .card-details{
+    display: flex;
+    align-items:flex-end ;
+    justify-content: space-between;
+    margin-top: 40px;
+    color: #fff;
+}
+h6{
+    font-size: 10px;
+    font-weight: 400;
+}
+h5.number{
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+h5.name{
+    margin-top: 20px;
+}
+ */
+ .payment-method {
+    background-color: #f9f9f900;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000001a;
+    margin-top: 20px;
+    margin-left: 80px;
+    width: 50%;
+    height: 15%;
+  }
+  
+  .payment-method h3 {
+    font-size: 22px;
+    /* margin-bottom: 15px; */
+    font-weight: 700;
+    color: #333;
+  }
+  
+  .payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cheakmethodpay{
+    display: flex;
+    flex-direction: row;
+    
+  }
+  
+  .payment-option {
+    position: relative;
+    padding-left: 35px;
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-block;
+  }
+  
+  .payment-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .payment-option .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border: 2px solid #999;
+    border-radius: 50%;
+  }
+  
+  .payment-option:hover input ~ .checkmark {
+    border-color: #3377ff;
+  }
+  
+  .payment-option input:checked ~ .checkmark {
+    background-color: #3377ff;
+    border-color: #3377ff;
+  }
+  
+  .payment-option .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .payment-option input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .payment-option .checkmark:after {
+    left: 6px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  /* Card */
+  .credit-card {
+    width: 300px;
+    height: 150px;
+    font-family: "Share Tech Mono", monospace;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.5rem;
+    backdrop-filter: blur(4px);
+    background: #2b2b2bda;
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0.35rem;
+    grid-template-areas: "provider . . ." "number number number number" "good-through-label good-through-value . validity" "holder holder holder select";
+  }
+  .credit-card > .provider {
+    grid-area: provider;
+  }
+  .credit-card > .number {
+    grid-area: number;
+  }
+  .credit-card > .number input , input.value {
+    grid-area: number;
+    background-color: #484747b8;
+  }
+  .credit-card > .good-through-label {
+    grid-area: good-through-label;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 0.60rem;
+  }
+  .credit-card > .good-through-value {
+    grid-area: good-through-value;
+  }
+  .credit-card > .good-through-value input , input.value {
+    grid-area: good-through-value;
+    width: 50px;
+    height: 15px;
+    background-color: #484747;
+  }
+  .credit-card > .holder {
+      grid-area: holder;
+      
+  }
+  .credit-card > .holder input , input.value {
+      background-color: #484747;
+      /* color: wi; */
+    grid-area: holder;
+    width: 130px;
+    font-size: small;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  /* .credit-card > .validity {
+    grid-area: validity;
+    border: 1px solid #44a333;
+    font-size: 1rem;
+    background: #57c443 linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.25) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.5);
+  } */
+  .credit-card > .select {
+    grid-area: select;
+    background: rgba(0, 0, 0, 0.5) linear-gradient(45deg, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.25) 100%);
+    border: 1px solid black;
+    color: black;
+    font-family: "#2b2b2bda", 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
+    /* text-decoration: none; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    box-shadow: 2px 3px 6px 0px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 250ms, transform 250ms;
+  }
+  .credit-card > .select:active {
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    transform: translate(-1px, -1px);
+  }
+
+
+    /* Style for overlay to dim background */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      /* background: rgba(0, 0, 0, 0.186); */
+      z-index: 999;
+      display: none;
+    }
+
+    #OrderNotification {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #6b686854;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    #OrderNotification p {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-size: large;
+      font-weight: bold;
+      background-color: #6b686854;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 8px;
+    }
+  
+    #OrderNotification .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      /* background-color: #007BFF;
+      color: white; */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+  /* Notification  */
+ /* Basic styles for the modal (Visa form and notification) */
+ .modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  /* padding: 20px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* z-index: 1000;  */
+  border-radius: 8px;
+  text-align: center;
+  display: none;
+  /* max-width: 400px; */
+  width: 100%;
+  height: 100%;
+}
+

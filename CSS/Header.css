@@ -1,0 +1,155 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,regular,500,600,700);
+
+/* Start of general styling */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear 0s;
+  font-family: "Quicksand", sans-serif;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --main-color: #0cb8b6;
+  --blue: #1d2d5e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.weight {
+  font-weight: 700;
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.bg-color {
+  background-color: var(--main-color);
+}
+
+.text-blue {
+  color: var(--blue);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.fit {
+  width: fit-content;
+}
+
+.btn {
+  font-weight: 600;
+  height: 50px;
+  background-color: var(--blue) !important;
+}
+
+.btn:hover {
+  background-color: var(--main-color) !important;
+  box-shadow: 0 0 15px rgba(12, 184, 182, 0.5);
+}
+/* End of general styling */
+.home .callLink {
+  top: -40px;
+}
+
+.home .callLink a:hover {
+  color: var(--black) !important;
+}
+
+
+
+
+.home .navbar.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 40px;
+  z-index: 10;
+}
+
+.navbar-brand img{
+  width: 100px;
+  height: 30px;
+}
+
+.home .navbar .navbar-brand img {
+  max-width: 250px;
+}
+/*  */
+/* Show the dropdown menu on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure dropdown is hidden by default */
+.nav-item .dropdown-menu {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.nav-item.dropdown:hover .nav-link::after {
+  transform: rotate(180deg);
+}
+/*  */
+
+.home .navbar .nav-item .nav-link {
+  font-weight: 600;
+  color: var(--black);
+  font-size: 18px;
+  position: relative;
+}
+
+.home .navbar .nav-item .nav-link:hover,
+.home .navbar .nav-item .nav-link.active {
+  color: var(--main-color);
+}
+
+.home .navbar .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  background-color: gold;
+  height: 3px;
+  width: 0;
+  left: 10px;
+  bottom: 0;
+  transition: width 0.2s linear 0s;
+}
+
+.home .navbar .nav-item .nav-link:hover::before,
+.home .navbar .nav-item .nav-link.active::before {
+  width: 20px;
+}
+
+/* Layout Section */
+.home .layout {
+  background-color: #f1f1f1;
+}
+
+.home .layout h1 {
+  font-size: 52px;
+  font-weight: 700;
+}
+
+#upBtn {
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
+}
+
+#upBtn:hover {
+  background-color: var(--blue) !important;
+  box-shadow: 0 0 15px rgba(29, 45, 94, 0.5);
+}
+/* End of Header (Home) */

@@ -1,0 +1,79 @@
+/** Style Nav in Page */
+.shop .nav-pills .nav-link {
+    position: relative;
+    top: 20px;
+    color: var(--black);
+    font-weight: 600;
+  }
+  
+  .shop .nav-pills .nav-link:hover,
+  .shop .nav-pills .nav-link.active {
+    background-color: var(--main-color);
+    color: var(--white);
+  }
+  
+/** Styl Button ADD to CART */
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item.active {
+  background-color: inherit;
+  color: var(--black);
+  padding-left: 20px;
+  position: relative;
+}
+
+.dropdown-menu .dropdown-item::before {
+  position: absolute;
+  content: "";
+  width: 5px;
+  background-color: var(--main-color);
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.2s linear 0s;
+}
+
+.dropdown-menu .dropdown-item:hover::before,
+.dropdown-menu .dropdown-item.active::before {
+  opacity: 1;
+}
+
+
+.shop .tab-content .row figure span:nth-of-type(1) {
+  top: 5%;
+  left:5%;
+}
+.shop .tab-content .row figure span:nth-of-type(2) {
+  top: 85%;
+  right: 5%;
+}
+
+.shop .tab-content .row figure:hover .addBtn {
+  opacity: 1 !important;
+}
+.shop .tab-content .row figure:hover .addBtn {
+    /* background: linear-gradient(0deg, #1c4d57 90%, transparent); */
+    /* content: ""; */
+    /* position: absolute; */
+    /* width: 100%; */
+    /* height: 100%; */
+    /* left: 0;
+    bottom: 0; */
+    /* z-index: 1; */
+    bottom: 200px;
+    transition: 0.5s;
+  /* opacity: 1 !important; */
+}
+
+.shop .tab-content .row figure .addBtn {
+  bottom: 50px;
+  /* left: 50%; */
+  transform: translateX(-50%);
+  width: 200px;
+  /* transition: all 0.2s linear 0s; */
+}
+/* .shop .tab-content .row figure .addBtn:hover {
+  background-color: var(--blue) !important;
+} */
+

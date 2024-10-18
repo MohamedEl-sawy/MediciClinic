@@ -1,0 +1,80 @@
+/* Start of Main */
+main section {
+    padding: 50px 0;
+  }
+  
+  /* Appoinment Section */
+  .appointment {
+    padding: 50px 0 0;
+  }
+  
+  .appointment .container {
+    top: -100px;
+  }
+  
+  .appointment .container form textarea,
+  .appointment .container form input {
+    background-color: #e6f8f8;
+    border: none;
+  }
+  
+  .appointment .container form textarea:focus,
+  .appointment .container form input:focus {
+    outline: none;
+  }
+  
+  /* Services Section */
+  .whyXtraSec .container .content .row div:hover img,
+  .services .container .content .rowIcons figure:hover img {
+    background-color: var(--blue) !important;
+  }
+  
+  .services .container .content .rowBtns button:nth-of-type(2) {
+    border-color: var(--blue) !important;
+  }
+  
+  .services .container .content .rowBtns button:nth-of-type(2):hover {
+    color: var(--white) !important;
+    background-color: var(--blue) !important;
+    box-shadow: none;
+  }
+  
+  .services .container .content figure span,
+  .experts .container figure span,
+  .partners .container .row .content figure span,
+  .whyXtraSec .container .content figure span {
+    top: -13px;
+    left: 50px !important;
+  }
+  
+  /* Slide Section */
+  .slideSec .container .row .slide .carousel-item img {
+    width: 100px !important;
+  }
+  
+  .slideSec .row .slide .carousel-indicators .indBtn {
+    border: 1px solid var(--black);
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--white);
+  }
+  
+  /* Experts Section */
+  .experts .container .row {
+    margin-top: 150px;
+  }
+  
+  .experts .container .row .expert {
+    margin-bottom: 100px;
+  }
+  
+  .experts .container .row i:hover {
+    cursor: pointer;
+    background-color: var(--main-color) !important;
+    color: var(--white) !important;
+  }
+  
+  .experts .container .row div img {
+    margin-top: -150px;
+  }
