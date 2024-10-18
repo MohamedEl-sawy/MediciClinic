@@ -41,9 +41,10 @@ let users = JSON.parse(localStorage.getItem('users')) || [];
 
 // Sample doctors with predefined email and password
 const doctors = [
-    { email: 'doctor1@example.com', password: 'password123', name: 'Dr. Ahmed' },
-  { email: 'doctor2@example.com', password: 'password456', name: 'Dr. Fatma' },
-  { email: 'doctor3@example.com', password: 'password789', name: 'Dr. Ali' }
+    { email: 'doctor1@gmail.com', password: 'password123', name: 'Dr. Ahmed' },
+  { email: 'doctor2@gmail.com', password: 'password456', name: 'Dr. Fatma' },
+  { email: 'doctor3@gmail.com', password: 'password789', name: 'Dr. Ali' },
+  { email: 'doctor4@gmail.com', password: 'password159', name: 'Dr. Ahmed' }
 ];
 
 // Handle signup form submission
