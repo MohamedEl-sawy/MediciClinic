@@ -11,8 +11,9 @@ html,body{
   width: 100%;
   place-items: center;
   background-image: url(../img/bglogin.jpg);
+   background-image: cover;
   background-repeat: no-repeat;
-  background-size: auto;
+/*   background-size: auto; */
   background-size: 100% 100%;
 
 
