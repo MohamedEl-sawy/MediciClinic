@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments by Department</title>
+    <style>
+        /* General styling for the page */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+
+        #appointmentsContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Styling for each department section */
+        .department {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 20px;
+        }
+
+        .department h2 {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1.5em;
+            margin: 0 -20px 20px;
+        }
+
+        .appointment {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 4px solid #4CAF50;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .appointment strong {
+            color: #4CAF50;
+        }
+
+        .appointment hr {
+            border: 0;
+            border-top: 1px solid #e0e0e0;
+            margin: 10px 0;
+        }
+
+        /* Delete button styling */
+        .delete-btn {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: darkred;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .department {
+                padding: 15px;
+            }
+
+            .department h2 {
+                font-size: 1.2em;
+                margin: 0 -15px 15px;
+            }
+
+            .appointment {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Appointments by Department</h1>
+    <div id="appointmentsContainer"></div>
+
+    <script>
+        // Function to display appointments by department
+        function displayAppointmentsByDepartment() {
+            const storedAppointmentsByDepartment = JSON.parse(localStorage.getItem('appointmentsByDepartment')) || {};
+            const container = document.getElementById('appointmentsContainer');
+
+            // Clear previous content
+            container.innerHTML = '';
+
+            // Check if there are any stored appointments
+            if (Object.keys(storedAppointmentsByDepartment).length === 0) {
+                container.textContent = 'No appointments found.';
+                return;
+            }
+
+            // Iterate over departments
+            for (const department in storedAppointmentsByDepartment) {
+                if (storedAppointmentsByDepartment.hasOwnProperty(department)) {
+                    // Create a section for each department
+                    const departmentSection = document.createElement('div');
+                    departmentSection.className = 'department';
+
+                    const departmentTitle = document.createElement('h2');
+                    departmentTitle.textContent = `Department: ${department}`;
+                    departmentSection.appendChild(departmentTitle);
+
+                    // Display appointments for the department
+                    storedAppointmentsByDepartment[department].forEach((appointment, index) => {
+                        const appointmentDiv = document.createElement('div');
+                        appointmentDiv.className = 'appointment';
+                        appointmentDiv.innerHTML = `
+                            <strong>Appointment ${index + 1}:</strong><br>
+                            Name: ${appointment.fullName}<br>
+                            Phone: ${appointment.phone}<br>
+                            Email: ${appointment.email}<br>
+                            Sickness: ${appointment.sickness}<br>
+                            Gender: ${appointment.gender}<br>
+                            Date: ${appointment.date}<br>
+                            Time: ${appointment.time}<br>
+                            <hr>
+                        `;
+
+                        // Add delete button
+                        const deleteBtn = document.createElement('button');
+                        deleteBtn.className = 'delete-btn';
+                        deleteBtn.textContent = 'Delete';
+                        deleteBtn.addEventListener('click', () => deleteAppointment(department, index));
+                        appointmentDiv.appendChild(deleteBtn);
+
+                        departmentSection.appendChild(appointmentDiv);
+                    });
+
+                    container.appendChild(departmentSection);
+                }
+            }
+        }
+
+        // Function to delete an appointment
+        function deleteAppointment(department, index) {
+            const storedAppointmentsByDepartment = JSON.parse(localStorage.getItem('appointmentsByDepartment')) || {};
+
+            if (storedAppointmentsByDepartment[department]) {
+                // Remove the selected appointment from the array
+                storedAppointmentsByDepartment[department].splice(index, 1);
+
+                // If there are no more appointments in the department, remove the department
+                if (storedAppointmentsByDepartment[department].length === 0) {
+                    delete storedAppointmentsByDepartment[department];
+                }
+
+                // Update localStorage with the new data
+                localStorage.setItem('appointmentsByDepartment', JSON.stringify(storedAppointmentsByDepartment));
+
+                // Redisplay the updated list of appointments
+                displayAppointmentsByDepartment();
+            }
+        }
+
+        // Call the function to display appointments when the page loads
+        document.addEventListener('DOMContentLoaded', displayAppointmentsByDepartment);
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cheak Out</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+  <link rel="stylesheet" href="../CSS/Cheakout.css">
+  
+</head>
+<body>
+
+
+  <div class="modal-wrapper">
+    <div class="card-image">
+      <div class="card-front">
+        <img class="card-background" src="https://raw.githubusercontent.com/MoosaSaadat/card-checkout/master/card.png" alt="Credit Card">
+        <div class="card-logo">
+          <div class="logo-circle left"></div>
+          <div class="logo-circle right"></div>
+        </div>
+        <span class="card-number" >XXXX XXXX XXXX XXXX</span>
+        <div class="card-info left">
+          <span class="card-holder-title">CARDHOLDER NAME</span>
+          <span class="card-holder-name">NAME SURNAME</span>
+        </div>
+        <div class="card-info right">
+          <span class="valid-thru-title">VALID THRU</span>
+          <span class="valid-thru-date">MM/YY</span>
+        </div>
+      </div>
+      <div class="card-rear">
+        <img class="card-background" src="https://raw.githubusercontent.com/MoosaSaadat/card-checkout/master/card.png" alt="Credit Card">
+        <div class="card-logo">
+          <div class="logo-circle left"></div>
+          <div class="logo-circle right"></div>
+        </div>
+        <div class="black-bar"></div>
+        <div class="card-info">
+          <span class="white-bar"></span>
+          <span class="security-code">123</span>
+        </div>
+      </div>
+      <span class="active-border"></span>
+    </div>
+    <div class="card-form">
+        <div class="form-wrapper">
+          <form action="#">
+            <div class="form-input">
+              <i class="far fa-credit-card"></i>
+              <input type="text" name="card-number" id="#number" placeholder="Card Number" onfocus="flipCard(event);" onblur="deactivateBorder(event)" onkeyup="traceNumberInput(event)" value="">
+            </div>
+            <div class="form-input">
+              <i class="fas fa-user"></i>
+              <input type="text" name="card-holder-name" id="#name" placeholder="Card Holder Name" onfocus="flipCard(event);" onblur="deactivateBorder(event)" onkeyup="traceNameInput(event)" value="">
+            </div>
+            <div class="form-input">
+              <i class="fas fa-calendar-day"></i>
+              <input type="text" name="valid-thru-date" id="#expiry" placeholder="Expiry Date" onfocus="flipCard(event);" onblur="deactivateBorder(event)" onkeyup="traceDateInput(event)" value="">
+            </div>
+            <div class="form-input">
+              <i class="fas fa-lock"></i>
+              <input type="number" name="security-code" id="#code" placeholder="Security Code" onfocus="flipCard(event);" onblur="deactivateBorder(event)" onkeyup="traceCodeInput(event)" value="">
+            </div>
+            <div class="form-input btn" id="DoneOrder">
+              <i class="fas fa-check"></i>
+              <button type="submit">Done</button>
+            </div>
+          </form>
+          <span id="message" style="display: none ;">An amount of <span id="amount"></span> will be deducted from your viza <button id="Done" >OK</button></span>
+        </div>
+    </div>
+  </div>
+
+  <script src="../JS/Main.js"></script>
+  <script src="../JS/Cheakout.js"></script>
+</body>
+</html>
