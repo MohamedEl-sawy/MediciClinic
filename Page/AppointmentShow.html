@@ -10,18 +10,67 @@
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f9;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             color: #333;
         }
 
-        h1 {
-            text-align: center;
+        /* Header styling */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            color: #333;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: background-color 0.5s ease, color 0.5s ease, transform 0.5s ease, opacity 0.5s ease; /* Animation transition */
+            opacity: 1;
+        }
+
+        /* Styling when scrolling (changes background color and visibility) */
+        header.hidden {
+            transform: translateY(-100%); /* Slide up when hidden */
+            opacity: 0; /* Make it invisible */
+        }
+
+        header.scrolled {
+            background-color: #4CAF50;
+            color: white;
+            transform: translateY(0); /* Slide back to view */
+            opacity: 1; /* Make it visible */
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            transition: color 0.5s ease;
+        }
+
+        /* Styling for the logout button */
+        .logout-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: white;
             color: #4CAF50;
         }
 
         #appointmentsContainer {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 100px auto 20px;
         }
 
         /* Styling for each department section */
@@ -92,14 +141,40 @@
             .appointment {
                 padding: 10px;
             }
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            header h1 {
+                margin-bottom: 10px;
+            }
+
+            .logout-btn {
+                align-self: flex-end;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Appointments by Department</h1>
+    <header id="mainHeader">
+        <h1>Appointments by Department</h1>
+        <button class="logout-btn" onclick="logOut()">Log Out</button>
+    </header>
+
     <div id="appointmentsContainer"></div>
 
     <script>
+        // Function to handle logout and redirect to login page
+        function logOut() {
+            // Clear any relevant data (if needed)
+            localStorage.removeItem('loggedInUser');
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        }
+
         // Function to display appointments by department
         function displayAppointmentsByDepartment() {
             const storedAppointmentsByDepartment = JSON.parse(localStorage.getItem('appointmentsByDepartment')) || {};
@@ -176,6 +251,25 @@
                 displayAppointmentsByDepartment();
             }
         }
+
+        // Add scroll event listener to manage header appearance
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            const currentScrollY = window.scrollY;
+
+            // Hide header on scroll down, show new header on scroll up
+            if (currentScrollY > lastScrollY && currentScrollY > 50) {
+                header.classList.add('hidden'); // Hide white header
+            } else if (currentScrollY < lastScrollY) {
+                header.classList.remove('hidden'); // Show new green header
+                header.classList.add('scrolled');
+            }
+
+            // Update last scroll position
+            lastScrollY = currentScrollY;
+        });
 
         // Call the function to display appointments when the page loads
         document.addEventListener('DOMContentLoaded', displayAppointmentsByDepartment);
