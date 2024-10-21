@@ -122,7 +122,7 @@ document.getElementById("Done").addEventListener("click", function(){
   // Set 'products' in localStorage to an empty array
   localStorage.setItem("products", JSON.stringify([]));  // Store an empty array
   setTimeout(function() {
-    window.location.href = '../page/Store.html'; // Replace with your checkout page URL
+    window.location.href = '../Page/Store.html'; // Replace with your checkout page URL
     document.getElementById("message").style.display="none"
   }, 300); // 3000 milliseconds = 3 seconds
 });
